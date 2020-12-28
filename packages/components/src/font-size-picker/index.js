@@ -53,17 +53,14 @@ function getSelectOptions( optionsArray, disableCustomFontSizes ) {
 	} ) );
 }
 
-function FontSizePicker(
-	{
-		fallbackFontSize,
-		fontSizes = [],
-		disableCustomFontSizes = false,
-		onChange,
-		value,
-		withSlider = false,
-	},
-	ref
-) {
+function FontSizePicker( {
+	fallbackFontSize,
+	fontSizes = [],
+	disableCustomFontSizes = false,
+	onChange,
+	value,
+	withSlider = false,
+} ) {
 	const hasUnits =
 		isString( value ) ||
 		( fontSizes[ 0 ] && isString( fontSizes[ 0 ].size ) );
@@ -94,7 +91,7 @@ function FontSizePicker(
 	const fontSizePickerNumberId = `components-font-size-picker__number#${ instanceId }`;
 
 	return (
-		<fieldset className="components-font-size-picker" ref={ ref }>
+		<fieldset className="components-font-size-picker">
 			<VisuallyHidden as="legend">{ __( 'Font size' ) }</VisuallyHidden>
 			<div className="components-font-size-picker__controls">
 				{ fontSizes.length > 0 && (
